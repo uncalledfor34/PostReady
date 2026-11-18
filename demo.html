@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PostReady Demo — Harbor Point Tower</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0d1b2a;--ink:#1b2a3a;--gold:#f2b134;--bg:#f4f6f9;--card:#fff;--muted:#5b6b7c;--red:#c0392b;--green:#1e8e5a}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+  .demo-banner{background:var(--gold);color:var(--navy);text-align:center;font-weight:800;font-size:.8rem;letter-spacing:.08em;padding:6px}
+  header{background:var(--navy);color:#fff;padding:28px 20px 24px}
+  .brand{font-weight:800;letter-spacing:.04em;color:var(--gold);font-size:.85rem}
+  h1{margin:6px 0 4px;font-size:1.6rem}
+  .addr{color:#b8c4d0;font-size:.9rem}
+  .post{display:inline-block;margin-top:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 12px;font-size:.8rem}
+  main{max-width:720px;margin:0 auto;padding:16px}
+  section{background:var(--card);border-radius:14px;padding:18px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  h2{margin:0 0 10px;font-size:1.1rem;display:flex;align-items:center;gap:8px}
+  h2 .n{background:var(--navy);color:var(--gold);width:26px;height:26px;border-radius:50%;display:inline-grid;place-items:center;font-size:.8rem}
+  .media{position:relative;border-radius:10px;overflow:hidden;background:#dfe5ec;aspect-ratio:16/9}
+  .media video,.media img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:.85rem;padding:10px;border:2px dashed #b7c2ce;border-radius:10px}
+  .media.loaded .ph{display:none}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+  .cap{font-weight:600;font-size:.9rem;margin:6px 0 0}
+  .sub{color:var(--muted);font-size:.82rem;margin:0}
+  ul.steps{padding-left:0;list-style:none;margin:0}
+  ul.steps li{padding:10px 0 10px 34px;border-bottom:1px solid #edf0f3;position:relative}
+  ul.steps li:last-child{border:0}
+  ul.steps li:before{content:"✓";position:absolute;left:4px;top:9px;color:var(--green);font-weight:800}
+  .sched{width:100%;border-collapse:collapse;font-size:.9rem}
+  .sched td{padding:8px 4px;border-bottom:1px solid #edf0f3}
+  .sched td:first-child{font-weight:600;white-space:nowrap;width:90px}
+  .alert{border-left:5px solid var(--red)}
+  .alert h2{color:var(--red)}
+  .contacts div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #edf0f3;font-size:.92rem}
+  .contacts div:last-child{border:0}
+  .contacts b{color:var(--navy)}
+  .done{background:var(--navy);color:#fff;text-align:center}
+  .done button{background:var(--gold);color:var(--navy);border:0;font:800 1rem Inter,sans-serif;padding:14px 22px;border-radius:10px;cursor:pointer;width:100%;max-width:340px}
+  .done p{color:#b8c4d0;font-size:.85rem}
+  #ok{display:none;font-weight:800;color:var(--gold);font-size:1.1rem;margin-top:12px}
+  footer{text-align:center;color:var(--muted);font-size:.75rem;padding:10px 16px 30px}
+</style>
+</head>
+<body>
+<div class="demo-banner">DEMO SITE — FICTIONAL BUILDING FOR SAMPLE PURPOSES</div>
+<header>
+  <div class="brand">POSTREADY</div>
+  <h1>Harbor Point Tower</h1>
+  <div class="addr">100 Demo Plaza · New York, NY</div>
+  <span class="post">Post: Lobby Command Desk · Overnight 11p–7a</span>
+</header>
+
+<main>
+  <section>
+    <h2><span class="n">1</span>Badging through the turnstiles</h2>
+    <div class="media" style="aspect-ratio:9/16;max-width:360px;margin:0 auto" data-src="media/turnstile.mp4" data-type="video">
+      <div class="ph">🎥 Turnstile video</div>
+    </div>
+    <p class="sub" style="margin-top:8px">Tap the badge flat on the reader in the glass top. Wait for the lights, then walk through to the elevator bank. Only one person per tap.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Key locations</h2>
+    <div class="grid">
+      <div><div class="media" data-src="media/entrance.jpg"><div class="ph">📷 Main entrance</div></div><p class="cap">Main Entrance</p><p class="sub">Revolving doors and side doors. Check that they're locked after hours, and log it every round.</p></div>
+      <div><div class="media" data-src="media/lobby-desk.jpg"><div class="ph">📷 Lobby desk</div></div><p class="cap">Lobby Command Desk</p><p class="sub">Your post. You'll find the desk phone, badge printer and visitor check-in computer here.</p></div>
+      <div><div class="media" data-src="media/turnstiles.jpg"><div class="ph">📷 Turnstiles</div></div><p class="cap">Turnstiles &amp; Elevator Bank</p><p class="sub">No one goes past the turnstiles without a badge or a visitor pass.</p></div>
+      <div><div class="media" data-src="media/cctv.jpg"><div class="ph">📷 CCTV station</div></div><p class="cap">CCTV Station</p><p class="sub">Watch the entrance, elevator and dock cameras between rounds.</p></div>
+      <div><div class="media" data-src="media/fire-panel.jpg"><div class="ph">📷 Fire command panel</div></div><p class="cap">Fire Alarm Command Center</p><p class="sub">It's beside the desk. Do not silence or reset an alarm unless FDNY or the Fire Safety Director tells you to.</p></div>
+      <div><div class="media" data-src="media/radios.jpg"><div class="ph">📷 Radio charger</div></div><p class="cap">Radios &amp; Emergency Plan</p><p class="sub">Radios charge in the cabinet. The Emergency Action Plan binder and a fire extinguisher are right next to them.</p></div>
+      <div><div class="media" data-src="media/lockbox.jpg"><div class="ph">📷 Key lockbox</div></div><p class="cap">Key Lockbox</p><p class="sub">Building keys are kept here. Your supervisor gives you the code in person. Never write it down or share it.</p></div>
+      <div><div class="media" data-src="media/logbook.jpg"><div class="ph">📷 Daily log</div></div><p class="cap">Daily Log Book</p><p class="sub">Write in ink and use 24-hour times. Log when you come on duty, every round, and every vendor.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Shift duties</h2>
+    <table class="sched">
+      <tr><td>11:00p</td><td>Relieve the evening guard and write "on duty" in the log. Take a radio from the charger and check the keys.</td></tr>
+      <tr><td>Hourly</td><td>Walk the lobby, check the entrances and the turnstiles, and write "Lobby safe and secured" in the log.</td></tr>
+      <tr><td>Overnight</td><td>When a vendor comes (trash pickup, deliveries), log the time they arrive and the time they leave.</td></tr>
+      <tr><td>Between rounds</td><td>Watch the CCTV and check in any late visitors.</td></tr>
+      <tr><td>6:45a</td><td>Put your radio back on the charger, brief the guard relieving you, and sign off in the log.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Post rules</h2>
+    <ul class="steps">
+      <li>Every visitor shows photo ID and is checked in on the visitor system before getting a pass.</li>
+      <li>No one goes past the turnstiles without a badge. No exceptions.</li>
+      <li>Keep your radio on you whenever you leave the desk.</li>
+      <li>Write every incident in the log with the time, the names and what happened.</li>
+      <li>Never share codes, passwords or tenant information.</li>
+    </ul>
+  </section>
+
+  <section class="alert">
+    <h2>⚠ Emergencies</h2>
+    <ul class="steps">
+      <li>Fire alarm: call 911, notify the Fire Safety Director, meet FDNY at the lobby.</li>
+      <li>Medical: call 911, send someone to meet EMS at the front door.</li>
+      <li>Suspicious person or package: do not touch it, keep people back, call the supervisor.</li>
+    </ul>
+  </section>
+
+  <section class="contacts">
+    <h2>Contacts (sample)</h2>
+    <div><span>Site Supervisor</span><b>Ext. 100</b></div>
+    <div><span>Building Manager</span><b>Ext. 200</b></div>
+    <div><span>Fire Safety Director</span><b>Ext. 300</b></div>
+    <div><span>Emergency</span><b>911</b></div>
+  </section>
+
+  <section class="done">
+    <h2 style="justify-content:center">Finished?</h2>
+    <button id="btn">I watched the training</button>
+    <div id="ok">✅ Done — tell your supervisor you completed it.</div>
+    <p>Questions about this post? Ask your supervisor before your shift.</p>
+  </section>
+</main>
+<footer>Powered by PostReady · postready.pro · heriberto@postready.pro</footer>
+
+<script>
+document.querySelectorAll('.media[data-src]').forEach(function(box){
+  var src=box.getAttribute('data-src'), el;
+  if(box.getAttribute('data-type')==='video'){
+    el=document.createElement('video'); el.controls=true; el.playsInline=true; el.preload="metadata"; el.muted=false; el.poster="media/turnstile-poster.jpg";
+    el.addEventListener('loadedmetadata',function(){box.classList.add('loaded')});
+  } else {
+    el=document.createElement('img'); el.alt='';
+    el.addEventListener('load',function(){box.classList.add('loaded')});
+  }
+  el.addEventListener('error',function(){el.remove()});
+  el.src=src; box.insertBefore(el,box.firstChild);
+});
+document.getElementById('btn').addEventListener('click',function(){
+  this.style.display='none'; document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>
